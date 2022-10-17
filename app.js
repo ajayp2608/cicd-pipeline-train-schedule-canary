@@ -6,7 +6,7 @@ var logger = require('morgan');
 var broken = false;
 
 var indexRouter = require('./routes/index');
-var trainRouter = require('./routes/train');
+var trainsRouter = require('./routes/trains');
 
 var app = express();
 
@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/train', trainRouter);
+app.use('/trains', trainsRouter);
 
 //this endpoint performs cpu-intensive calculations
 app.get('/generate-cpu-load', function(req, res, next) {
